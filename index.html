@@ -1,0 +1,76 @@
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Data Management</title>
+</head>
+<body>
+
+    <h2>Student Data Management</h2>
+
+    <script>
+        // Create an array of student objects
+        let students = [
+            {id: 1, name: "Kavya", department: "CSE", mark: 85},
+            {id: 2, name: "Priya", department: "AIML", mark: 90},
+            {id: 3, name: "Riya", department: "IT", mark: 75}
+        ];
+
+        // Display student details
+        document.write("<h3>Student Details</h3>");
+        students.forEach(student => {
+            document.write(student.id + " " + student.name + " " +
+            student.department + " " + student.mark + "<br>");
+        });
+
+        // Add a new student using push()
+        students.push({
+            id: 4,
+            name: "Kavi",
+            department: "AIML",
+            mark: 98
+        });
+
+        document.write("<h3>After Adding Student</h3>");
+        students.forEach(student => {
+            document.write(student.name + " - " + student.mark + "<br>");
+        });
+
+        // Find a student using find()
+        let result = students.find(student => student.id === 2);
+
+        document.write("<h3>Search Student</h3>");
+        document.write(result.name + " - " + result.department + "<br>");
+
+        // Filter students with marks above 80
+        let filtered = students.filter(student => student.mark > 80);
+
+        document.write("<h3>Students Scoring Above 80</h3>");
+        filtered.forEach(student => {
+            document.write(student.name + " - " + student.mark + "<br>");
+        });
+
+        // Calculate average mark
+        let total = 0;
+
+        students.forEach(student => {
+            total = total + student.mark;
+        });
+
+        let average = total / students.length;
+
+        document.write("<h3>Average Mark</h3>");
+        document.write(average + "<br>");
+
+        // Remove the last student using pop()
+        students.pop();
+
+        document.write("<h3>After Removing Last Student</h3>");
+        students.forEach(student => {
+            document.write(student.name + " - " + student.mark + "<br>");
+        });
+
+    </script>
+
+</body>
+</html>
